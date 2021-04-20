@@ -4,12 +4,7 @@
 	function getData()
 	{
 		console.log("inside");
-		fetch(url,{
-			method : 'get',
-			"Access-Control-Allow-Headers":  {
-                    'Content-Type':'application/json',
-                }
-		}).then((response) => {
+		fetch(url).then((response) => {
 			console.log("1");
 			return response.text();
 		}).then((data) => {
