@@ -1,0 +1,18 @@
+<script>
+    const url ='dom.txt';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET',url,true);
+    //xhr.setRequestHeader('Content-type','/application/json');
+    xhr.onload=function()
+    {
+        var users = JSON.parse(xhr.responseText);
+	    if ( xhr.status == 200) {
+		    console.log(users);
+	    } 
+        else {
+		console.error(users);
+	    }
+    }
+    xhr.send();
+
+</script>

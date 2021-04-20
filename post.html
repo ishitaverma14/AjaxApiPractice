@@ -1,0 +1,60 @@
+<!--posttt-->
+<script>
+    //Type your code here
+var xhr = new XMLHttpRequest();
+/*
+//POST
+request.open("POST","https://api.github.com/users?",true);
+request.getResponseHeader('Content-type','application/JSON');
+
+
+//optional
+request.onreadystatechange=function(){
+    console.log("ready state changed"+this.readyState );
+}
+
+// jb b server se response ata h status code 200 mtlb sb yhi chlra 404 address not found 403 data move krdia gya 302 not permission to see data
+let params= `{"title": "Libero et ut sit vitae et porta arcu lorem donec sed vehicula mattis praesent sed ultricies.",
+            "content": "Et libero amet nec arcu lacinia sit diam ut sit ipsum sit donec congue sit. Sit consectetur sit diam ut hendrerit libero ligula dolor donec enim non amet congue amet tortor mattis nec lorem donec vitae nam dolor consectetur ligula. Eget ut eget sed et sed diam eget. Tincidunt lorem sit libero hendrerit ultricies mauris consectetur donec mauris ut mattis lorem donec viverra nam ligula vehicula tincidunt sit. Amet vehicula nec donec ut a sed praesent non et donec nec libero consectetur ipsum ultricies mattis tortor ut ultricies diam.",
+            "userId": 1,
+            "categoryId": 4,
+            "imageUrl": "https://i.picsum.photos/id/866/700/400.jpg"}`;
+request.send(params);
+request.onload=function()
+{
+    if(this.status!==200)
+    {
+        console.log("error");
+    }
+    else
+        console.log(this.response);
+}
+//request.onload*/
+xhr.open('POST', "https://jsonplaceholder.typicode.com/posts", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+
+    // What to do on progress (optional)
+    xhr.onprogress = function(){
+        console.log('On progress');
+    }
+
+
+    
+    xhr.onload = function () {
+        if(this.status === 201){
+
+            console.log(this.responseText)
+        }
+        else{
+            console.log("Some error occured")
+        }
+    }
+
+    // send the request
+    params = `{"title":"test34sad545","body":"ewsaz"}`;
+    xhr.send(params);
+
+    console.log("We are done!");
+</script>
+
