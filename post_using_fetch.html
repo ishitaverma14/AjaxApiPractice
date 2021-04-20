@@ -1,0 +1,27 @@
+<script>
+	console.log("before getting data");
+	const url = 'https://jsonplaceholder.typicode.com/posts';
+    const data ={
+        name :'zplle',
+        roll:123
+    }
+    let params = {
+        method :'POST',
+        headers :{
+            'Content-Type' : 'application/json'
+        },
+        body:JSON.stringify(data)
+    }
+	function postData()
+	{
+		console.log("inside");
+		fetch(url,params).then(function(response) {
+			return response.json();
+		}).then(function(data) {
+			console.log("2");
+			console.log(data);
+		})
+	}
+	postData();
+	console.log("after");
+</script>
