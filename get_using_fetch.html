@@ -1,0 +1,21 @@
+<script>
+	console.log("before getting data");
+	const url = 'dom.txt';
+	function getData()
+	{
+		console.log("inside");
+		fetch(url,{
+			"Access-Control-Allow-Headers":  {
+                    'Content-Type':'application/json',
+                }
+		}).then((response) => {
+			console.log("1");
+			return response.text();
+		}).then((data) => {
+			console.log("2");
+			console.log(data);
+		})
+	}
+	getData();
+	console.log("after");
+</script>
